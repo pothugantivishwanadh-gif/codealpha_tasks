@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #eef2f3, #dfe6e9);
+}
+
+.calculator {
+    width: 360px;
+    padding: 22px;
+    background: #ffffff;
+    border-radius: 28px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.header h2 {
+    font-size: 24px;
+    color: #222;
+    letter-spacing: 0.5px;
+}
+
+.header span {
+    display: block;
+    margin-top: 4px;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #999;
+}
+
+.screen {
+    height: 125px;
+    background: #f7f8f9;
+    border-radius: 20px;
+    padding: 18px;
+    margin-bottom: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    overflow: hidden;
+}
+
+#history {
+    height: 22px;
+    width: 100%;
+    text-align: right;
+    color: #a0a0a0;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+#display {
+    width: 100%;
+    text-align: right;
+    color: #202020;
+    font-size: 40px;
+    font-weight: 600;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 11px;
+}
+
+button {
+    height: 62px;
+    border: none;
+    border-radius: 17px;
+    background: #f0f2f4;
+    color: #252525;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    background: #e6e9ec;
+}
+
+button:active {
+    transform: scale(0.94);
+}
+
+.operator {
+    background: #e8ecef;
+    font-size: 23px;
+}
+
+.operator:hover {
+    background: #dce1e5;
+}
+
+.special {
+    background: #f1e8e7;
+    color: #b34b43;
+}
+
+.special:hover {
+    background: #eadbd9;
+}
+
+.equal {
+    background: #222;
+    color: white;
+}
+
+.equal:hover {
+    background: #3a3a3a;
+}
+
+.zero {
+    grid-column: span 2;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 17px;
+    font-size: 11px;
+    color: #aaa;
+}
