@@ -1,59 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Alpha Calculator</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Code Alpha | Image Gallery</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-    <div class="calculator">
+  <!-- NAVBAR -->
+  <header class="navbar">
 
-        <div class="header">
-            <h2>Code Alpha</h2>
-            <span>CALCULATOR</span>
+    <a href="#" class="brand">
+      Code Alpha
+    </a>
+
+    <div class="nav-center">
+      IMAGE GALLERY
+    </div>
+
+    <a href="#gallery" class="explore-link">
+      Explore Gallery →
+    </a>
+
+  </header>
+
+
+  <!-- HERO -->
+  <main>
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <p class="eyebrow">
+          A COLLECTION OF VISUAL STORIES
+        </p>
+
+        <h1>
+          See the world
+          <span>differently.</span>
+        </h1>
+
+        <p class="hero-description">
+          Explore a carefully selected collection of
+          beautiful places, moments, technology and
+          everyday experiences.
+        </p>
+
+        <a href="#gallery" class="hero-button">
+          Explore Collection
+        </a>
+
+      </div>
+
+      <div class="hero-shape"></div>
+
+    </section>
+
+
+    <!-- GALLERY -->
+    <section class="gallery-section" id="gallery">
+
+      <div class="section-header">
+
+        <div>
+          <p class="eyebrow">
+            THE COLLECTION
+          </p>
+
+          <h2>
+            Explore the gallery
+          </h2>
         </div>
 
-        <div class="screen">
-            <div id="history"></div>
-            <div id="display">0</div>
+        <p id="imageCount">
+          15 photographs
+        </p>
+
+      </div>
+
+
+      <!-- FILTER BUTTONS -->
+      <div class="filters" id="filters">
+
+        <button
+          class="filter-btn active"
+          data-category="all"
+          aria-pressed="true">
+          All Photos
+        </button>
+
+        <button
+          class="filter-btn"
+          data-category="nature"
+          aria-pressed="false">
+          Nature
+        </button>
+
+        <button
+          class="filter-btn"
+          data-category="architecture"
+          aria-pressed="false">
+          Architecture
+        </button>
+
+        <button
+          class="filter-btn"
+          data-category="travel"
+          aria-pressed="false">
+          Travel
+        </button>
+
+        <button
+          class="filter-btn"
+          data-category="lifestyle"
+          aria-pressed="false">
+          Lifestyle
+        </button>
+
+        <button
+          class="filter-btn"
+          data-category="technology"
+          aria-pressed="false">
+          Technology
+        </button>
+
+      </div>
+
+
+      <!-- IMAGE GRID -->
+      <div
+        class="gallery-grid"
+        id="galleryGrid">
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <a href="#" class="brand">
+      Code Alpha
+    </a>
+
+    <p>
+      A visual collection of inspiring moments.
+    </p>
+
+    <p>
+      © 2026 Code Alpha
+    </p>
+
+  </footer>
+
+
+  <!-- LIGHTBOX -->
+  <div
+    class="lightbox"
+    id="lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-hidden="true"
+  >
+
+    <button
+      class="close-btn"
+      id="closeBtn"
+      aria-label="Close">
+      ×
+    </button>
+
+
+    <button
+      class="lightbox-nav prev-btn"
+      id="prevBtn"
+      aria-label="Previous image">
+      ‹
+    </button>
+
+
+    <div class="lightbox-content">
+
+      <img
+        id="lightboxImage"
+        src=""
+        alt=""
+      >
+
+      <div class="lightbox-info">
+
+        <div>
+
+          <p
+            id="lightboxCategory"
+            class="photo-category">
+          </p>
+
+          <h3 id="lightboxTitle"></h3>
+
         </div>
 
-        <div class="keys">
+        <p
+          id="imageCounter"
+          class="image-counter">
+          01 / 15
+        </p>
 
-            <button class="special" onclick="clearAll()">C</button>
-            <button class="special" onclick="deleteLast()">⌫</button>
-            <button class="operator" onclick="chooseOperator('%')">%</button>
-            <button class="operator" onclick="chooseOperator('÷')">÷</button>
-
-            <button onclick="appendNumber('7')">7</button>
-            <button onclick="appendNumber('8')">8</button>
-            <button onclick="appendNumber('9')">9</button>
-            <button class="operator" onclick="chooseOperator('×')">×</button>
-
-            <button onclick="appendNumber('4')">4</button>
-            <button onclick="appendNumber('5')">5</button>
-            <button onclick="appendNumber('6')">6</button>
-            <button class="operator" onclick="chooseOperator('-')">−</button>
-
-            <button onclick="appendNumber('1')">1</button>
-            <button onclick="appendNumber('2')">2</button>
-            <button onclick="appendNumber('3')">3</button>
-            <button class="operator" onclick="chooseOperator('+')">+</button>
-
-            <button class="zero" onclick="appendNumber('0')">0</button>
-            <button onclick="appendNumber('.')">.</button>
-            <button class="equal" onclick="calculate()">=</button>
-
-        </div>
-
-        <div class="footer">
-            Keyboard enabled
-        </div>
+      </div>
 
     </div>
 
-    <script src="script.js"></script>
+
+    <button
+      class="lightbox-nav next-btn"
+      id="nextBtn"
+      aria-label="Next image">
+      ›
+    </button>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
 </body>
 </html>
